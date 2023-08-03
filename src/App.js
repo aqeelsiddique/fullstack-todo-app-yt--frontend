@@ -5,19 +5,19 @@ import { addToDo, getAllToDo, updateToDo, deleteToDo } from "./utils/HandleApi";
 
 function App() {
 
-  const [toDo, setToDo] = useState([])
+  const [todo, settodo] = useState([])
   const [text, setText] = useState("")
   const [isUpdating, setIsUpdating] = useState(false)
-  const [toDoId, setToDoId] = useState("")
+  const [todoId, setdodoId] = useState("")
 
   useEffect(() => {
-    getAllToDo(setToDo)
+    getAllToDo(settodo)
   }, [])
 
   const updateMode = (_id, text) => {
     setIsUpdating(true)
     setText(text)
-    setToDoId(_id)
+    setdodoId(_id)
   }
 
   return (
@@ -25,12 +25,12 @@ function App() {
 
       <div className="container">
 
-        <h1>ToDo App</h1>
+        <h1>Assingment Task </h1>
 
         <div className="top">
           <input
             type="text"
-            placeholder="Add ToDos..."
+            placeholder="Add Text"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
@@ -38,8 +38,8 @@ function App() {
           <div
             className="add"
             onClick={isUpdating ?
-              () => updateToDo(toDoId, text, setToDo, setText, setIsUpdating)
-              : () => addToDo(text, setText, setToDo)}>
+              () => updateToDo(todoId, text, settodo, setText, setIsUpdating)
+              : () => addToDo(text, setText, settodo)}>
             {isUpdating ? "Update" : "Add"}
           </div>
 
@@ -47,11 +47,13 @@ function App() {
 
         <div className="list">
 
-          {toDo.map((item) => <ToDo 
+          {todo.map((item) => <ToDo 
+         
+         
           key={item._id} 
           text={item.text}
           updateMode = {() => updateMode(item._id, item.text)}
-          deleteToDo = {() => deleteToDo(item._id, setToDo)} />)}
+          deleteToDo = {() => deleteToDo(item._id, settodo)} />)}
 
         </div>
 

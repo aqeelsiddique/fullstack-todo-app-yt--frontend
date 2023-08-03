@@ -1,18 +1,23 @@
 import React from 'react'
 
-import {BiEdit} from "react-icons/bi"
-import {AiFillDelete} from "react-icons/ai"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 const ToDo = ({text, updateMode, deleteToDo}) => {
     return (
         <div className="todo">
-            <div className="text">{text}</div>
-            <div className="icons">
-                <BiEdit className='icon' onClick={updateMode} />
-                <AiFillDelete className='icon' onClick={deleteToDo} />
-            </div>
+          <p>{text}</p>
+          <div className="actions">
+            <button onClick={updateMode}>
+              <FontAwesomeIcon icon={faEdit} size="2x" /> 
+            </button>
+            <button onClick={deleteToDo} className="delete">
+              <FontAwesomeIcon icon={faTrashAlt} size="2x" /> 
+            </button>
+          </div>
         </div>
-    )
+      );
 }
 
 export default ToDo

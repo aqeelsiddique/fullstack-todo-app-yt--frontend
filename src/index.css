@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container{
+/* .container{
   max-width: 600px;
   margin: auto;
   padding: 0 1rem;
@@ -65,4 +65,92 @@ input{
 .icon{
   cursor: pointer;
   font-size: 20px;
+} */
+
+
+/* App.css */
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+}
+
+.list .todo {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+}
+
+.list .todo .actions {
+  display: flex;
+  align-items: center;
+}
+
+.list .todo .actions button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.list .todo .actions button.delete {
+  color: #ff0000;
+}
+.icons{
+  position: absolute;
+  
+  
+  transform: translateY(-50%);
+  right: 20px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon{
+  cursor: pointer;
+  font-size: 20px;
+} 
